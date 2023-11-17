@@ -1,0 +1,15 @@
+.app {
+    width: 100vw;
+    height: 100vh;
+    padding: 40px;
+    box-sizing: border-box;
+
+    background: var(--interface-bg, #131316);
+}
+
+.main {
+    display: flex;
+    padding: 40px 0 0;
+    box-sizing: border-box;
+    height: calc(100% - 88px);
+}
