@@ -11,7 +11,7 @@ const App = () => {
       <AppHeader />
       <main className={styles.main}>
         <BurgerIngredients data={data} />
-        {/*<BurgerConstructor data={data} />*/}
+        <BurgerConstructor data={data} />
       </main>
     </div>
   );

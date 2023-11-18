@@ -1,40 +1,54 @@
-import { Button, ConstructorElement } from '@ya.praktikum/react-developer-burger-ui-components'
+import { Button, ConstructorElement, CurrencyIcon, DragIcon } from '@ya.praktikum/react-developer-burger-ui-components'
 import PropTypes from 'prop-types'
 import styles from './burger-constructor.module.css'
 const BurgerConstructor = (props) => {
-  const img = '';
+  const bun = props.data.find(el => el.type === 'bun');
+  const ingredients = props.data.filter(el => el.type !== 'bun');
   return (
     <section className={styles['burger-constructor']}>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-        <ConstructorElement
-          type="top"
-          isLocked={true}
-          text="Краторная булка N-200i (верх)"
-          price={200}
-          thumbnail={img}
-        />
-        <div style={{overflowY:'scroll', marginTop: 40, height: 'calc(100% - 200px)'}} className="custom-scroll">
-          {props.data.map(el => (
-            <ConstructorElement
-              key={el._id}
-              text={el.name}
-              price={el.price}
-              thumbnail={el.image}
-            />
-          ))}
+      <div className={styles.content}>
+        <div className={`${styles['ingredient-top']}`}>
+          <ConstructorElement
+            type="top"
+            isLocked={true}
+            text={`${bun.name} (верх)`}
+            price={bun.price}
+            thumbnail={bun.image}
+          />
         </div>
-
-        <ConstructorElement
-          type="bottom"
-          isLocked={true}
-          text="Краторная булка N-200i (низ)"
-          price={200}
-          thumbnail={img}
-        />
+        <ul className={`${styles.ingredients} custom-scroll`}>
+          {ingredients.map(el => (
+            <li key={el._id} className={`${styles['ingredients-item']}`}>
+              <DragIcon type="primary" />
+              <ConstructorElement
+                text={el.name}
+                price={el.price}
+                thumbnail={el.image}
+              />
+            </li>
+          ))}
+        </ul>
+        <div className={`${styles['ingredient-bottom']}`}>
+          <ConstructorElement
+            type="bottom"
+            isLocked={true}
+            text={`${bun.name} (низ)`}
+            price={bun.price}
+            thumbnail={bun.image}
+          />
+        </div>
       </div>
-      <Button htmlType="button" type="primary" size="medium">
-        Оформить заказ
-      </Button>
+      <div className={styles.footer}>
+        <span className={`${styles.summary} text text_type_digits-medium`}>
+          1450
+          <span className={styles.currency}>
+            <CurrencyIcon type="primary" />
+          </span>
+        </span>
+        <Button htmlType="button" type="primary" size="medium">
+          Оформить заказ
+        </Button>
+      </div>
     </section>
   )
 }
