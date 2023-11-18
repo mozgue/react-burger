@@ -56,6 +56,7 @@ const BurgerConstructor = (props) => {
 BurgerConstructor.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({
+      _id: PropTypes.string,
       name: PropTypes.string,
       price: PropTypes.number,
       image: PropTypes.string
