@@ -1,5 +1,5 @@
 import React from 'react'
-import { CurrencyIcon} from '@ya.praktikum/react-developer-burger-ui-components'
+import { CurrencyIcon, Counter } from '@ya.praktikum/react-developer-burger-ui-components'
 import PropTypes from 'prop-types'
 import styles from './burger-ingredients-item.module.css'
 const BurgerIngredientsItem = (props) => {
@@ -11,6 +11,7 @@ const BurgerIngredientsItem = (props) => {
         <span className={styles.currency}><CurrencyIcon type="primary" /></span>
       </span>
       <h3 className={`${styles.name} text text_type_main-default`}>{props.name}</h3>
+      <Counter count={1} size="default"/>
     </React.Fragment>
   )
 }
