@@ -28,7 +28,7 @@ const BurgerConstructor = (props) => {
             </li>
           ))}
         </ul>
-        <div className={`${styles['ingredient-bottom']}`}>
+        <div className={styles['ingredient-bottom']}>
           <ConstructorElement
             type="bottom"
             isLocked={true}

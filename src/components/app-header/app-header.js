@@ -6,7 +6,7 @@ const AppHeader = () => {
     <header className={styles.header}>
       <nav>
         <ul className={styles.menu}>
-          <li className={`text text_type_main-default ${styles['menu-item']}`}>
+          <li className={`${styles['menu-item']} text text_type_main-default`}>
             <a href="#" className={styles['menu-item_link']}>
               <span className={styles['menu-item_icon']}>
                 <BurgerIcon type="primary" />
@@ -14,7 +14,7 @@ const AppHeader = () => {
               Конструктор
             </a>
           </li>
-          <li className={`text text_type_main-default text_color_inactive ${styles['menu-item']}`}>
+          <li className={`${styles['menu-item']} text text_type_main-default text_color_inactive`}>
             <a href="#" className={styles['menu-item_link']}>
               <span className={styles['menu-item_icon']}>
                 <ListIcon type="secondary" />
@@ -25,7 +25,7 @@ const AppHeader = () => {
         </ul>
       </nav>
       <Logo />
-      <span className={`text text_type_main-default text_color_inactive ${styles['menu-item']}`}>
+      <span className={`${styles['menu-item']} text text_type_main-default text_color_inactive`}>
         <a href="#" className={styles['menu-item_link']}>
           <span className={styles['menu-item_icon']}>
             <ProfileIcon type="secondary" />

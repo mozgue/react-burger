@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import styles from './burger-ingredients-item.module.css'
 const BurgerIngredientsItem = (props) => {
   return (
-    <React.Fragment>
+    <>
       <img className={styles.image} src={props.image} alt={props.name} />
       <span className={`${styles.price} text text_type_digits-default`}>
         {props.price}
@@ -12,7 +12,7 @@ const BurgerIngredientsItem = (props) => {
       </span>
       <h3 className={`${styles.name} text text_type_main-default`}>{props.name}</h3>
       <Counter count={1} size="default"/>
-    </React.Fragment>
+    </>
   )
 }
 
