@@ -1,4 +1,3 @@
-import React from 'react'
 import BurgerIngredientsItem from '../burger-ingredients-item/burger-ingredients-item'
 
 import PropTypes from 'prop-types'
@@ -24,7 +23,13 @@ const BurgerIngredientsGroup = (props) => {
   )
 }
 BurgerIngredientsGroup.propTypes = {
-  data: PropTypes.array,
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      image: PropTypes.string,
+      price: PropTypes.number,
+      name: PropTypes.string
+    }).isRequired
+  ).isRequired,
   name: PropTypes.string
 }
 

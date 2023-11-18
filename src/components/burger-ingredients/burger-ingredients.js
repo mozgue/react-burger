@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './burger-ingredients.module.css'
 import PropTypes from 'prop-types'
 import BurgerIngredientsTabs from './burger-ingredients-tabs/burger-ingredients-tabs'
@@ -23,6 +22,12 @@ const BurgerIngredients = (props) => {
   )
 }
 BurgerIngredients.propTypes = {
-  data: PropTypes.array
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      image: PropTypes.string,
+      price: PropTypes.number,
+      name: PropTypes.string
+    }).isRequired
+  ).isRequired
 }
 export default BurgerIngredients;
