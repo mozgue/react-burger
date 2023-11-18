@@ -7,25 +7,31 @@ const AppHeader = () => {
       <nav>
         <ul className={styles.menu}>
           <li className={`text text_type_main-default ${styles['menu-item']}`}>
-            <span className={styles['menu-item_icon']}>
-              <BurgerIcon type="primary" />
-            </span>
-            Конструктор
+            <a href="#" className={styles['menu-item_link']}>
+              <span className={styles['menu-item_icon']}>
+                <BurgerIcon type="primary" />
+              </span>
+              Конструктор
+            </a>
           </li>
           <li className={`text text_type_main-default text_color_inactive ${styles['menu-item']}`}>
-            <span className={styles['menu-item_icon']}>
-              <ListIcon type="secondary" />
-            </span>
-            Лента заказов
+            <a href="#" className={styles['menu-item_link']}>
+              <span className={styles['menu-item_icon']}>
+                <ListIcon type="secondary" />
+              </span>
+              Лента заказов
+            </a>
           </li>
         </ul>
       </nav>
       <Logo />
       <span className={`text text_type_main-default text_color_inactive ${styles['menu-item']}`}>
-        <span className={styles['menu-item_icon']}>
-          <ProfileIcon type="secondary" />
-        </span>
-        Личный кабинет
+        <a href="#" className={styles['menu-item_link']}>
+          <span className={styles['menu-item_icon']}>
+            <ProfileIcon type="secondary" />
+          </span>
+          Личный кабинет
+        </a>
       </span>
     </header>
   )
