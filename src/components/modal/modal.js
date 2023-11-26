@@ -37,6 +37,7 @@ evt => evt.key === 'Escape' && props.close()
 }
 
 Modal.propTypes = {
-  title: PropTypes.string
+  title: PropTypes.string,
+  close: PropTypes.func
 }
 export default Modal;

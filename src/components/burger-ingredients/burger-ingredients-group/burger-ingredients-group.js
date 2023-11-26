@@ -2,6 +2,7 @@ import BurgerIngredientsItem from '../burger-ingredients-item/burger-ingredients
 
 import PropTypes from 'prop-types'
 import styles from './burger-ingredients-group.module.css'
+import ingredientType from '../../../utils/prop-types'
 
 const BurgerIngredientsGroup = (props) => {
 
@@ -25,15 +26,9 @@ const BurgerIngredientsGroup = (props) => {
   )
 }
 BurgerIngredientsGroup.propTypes = {
-  data: PropTypes.arrayOf(
-    PropTypes.shape({
-      image: PropTypes.string,
-      price: PropTypes.number,
-      name: PropTypes.string,
-    }).isRequired
-  ).isRequired,
-  name: PropTypes.string,
-  open: PropTypes.func
+  data: PropTypes.arrayOf(ingredientType.isRequired).isRequired,
+  name: PropTypes.string.isRequired,
+  open: PropTypes.func.isRequired
 }
 
 export default BurgerIngredientsGroup;

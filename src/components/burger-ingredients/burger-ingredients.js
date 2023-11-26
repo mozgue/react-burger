@@ -6,6 +6,7 @@ import Modal from '../modal/modal'
 
 import styles from './burger-ingredients.module.css'
 import PropTypes from 'prop-types'
+import ingredientType from '../../utils/prop-types'
 
 const BurgerIngredients = (props) => {
   const [modalIsOpen, setModalIsOpen] = useState(false)
@@ -41,12 +42,6 @@ const BurgerIngredients = (props) => {
   )
 }
 BurgerIngredients.propTypes = {
-  data: PropTypes.arrayOf(
-    PropTypes.shape({
-      image: PropTypes.string,
-      price: PropTypes.number,
-      name: PropTypes.string
-    }).isRequired
-  ).isRequired
+  data: PropTypes.arrayOf(ingredientType.isRequired).isRequired
 }
 export default BurgerIngredients;
