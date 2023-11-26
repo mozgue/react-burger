@@ -12,9 +12,11 @@ const BurgerIngredientsGroup = (props) => {
         {props.data.map(el => (
           <li key={el._id} className={styles.item}>
             <BurgerIngredientsItem
+              id={el._id}
               image={el.image}
               price={el.price}
               name={el.name}
+              open={props.open}
             />
           </li>
         ))}
@@ -27,10 +29,11 @@ BurgerIngredientsGroup.propTypes = {
     PropTypes.shape({
       image: PropTypes.string,
       price: PropTypes.number,
-      name: PropTypes.string
+      name: PropTypes.string,
     }).isRequired
   ).isRequired,
-  name: PropTypes.string
+  name: PropTypes.string,
+  open: PropTypes.func
 }
 
 export default BurgerIngredientsGroup;
