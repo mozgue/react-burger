@@ -8,11 +8,11 @@ import styles from './burger-ingredients.module.css'
 import PropTypes from 'prop-types'
 import ingredientType from '../../utils/prop-types'
 
-const BurgerIngredients = (props) => {
+const BurgerIngredients = ({ data }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false)
   const [ingredient, setIngredient] = useState({})
   const handleOpenModal = (id) => {
-    const selectedIngredient = props.data.find(el => el._id === id);
+    const selectedIngredient = data.find(el => el._id === id);
     setIngredient(selectedIngredient)
     setModalIsOpen(true)
   }
@@ -20,9 +20,9 @@ const BurgerIngredients = (props) => {
     setModalIsOpen(false)
   }
 
-  const buns = props.data.filter(el => el.type === 'bun');
-  const sauces = props.data.filter(el => el.type ==='sauce');
-  const main = props.data.filter(el => el.type === 'main');
+  const buns = data.filter(el => el.type === 'bun');
+  const sauces = data.filter(el => el.type ==='sauce');
+  const main = data.filter(el => el.type === 'main');
 
   return (
     <section className={styles['burger-ingredients']}>
@@ -35,7 +35,13 @@ const BurgerIngredients = (props) => {
       </div>
       { modalIsOpen && (
         <Modal title={'Детали ингредиента'} close={handleCloseModal}>
-          <IngredientDetails {...ingredient} />
+          <IngredientDetails
+            image={ingredient.image_large}
+            name={ingredient.name}
+            calories={ingredient.calories}
+            proteins={ingredient.proteins}
+            fat={ingredient.fat}
+            carbohydrates={ingredient.carbohydrates} />
         </Modal>
       )}
     </section>

@@ -5,32 +5,26 @@ import BurgerIngredients from '../burger-ingredients/burger-ingredients'
 import BurgerConstructor from '../burger-constructor/burger-constructor'
 
 import { useState, useEffect } from 'react'
+import { getIngredients } from '../../utils/burger-api'
 
-const URL = 'https://norma.nomoreparties.space/api/ingredients';
 const App = () => {
   const [ingredients, setIngredients] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
   useEffect(() => {
+    setError('')
+    setLoading(true)
 
-    async function getIngredientsData(url) {
-      setLoading(true)
-
-      await fetch(url)
-        .then(res => res.json())
-        .then(res =>  {
-          setIngredients(res.data)
-          setLoading(false)
-        })
-        .catch(error => {
-          setLoading(false)
-          setError(error)
-        })
-    }
-
-    getIngredientsData(URL)
-
+    getIngredients()
+      .then(res => {
+        setIngredients(res.data)
+        setLoading(false)
+      })
+      .catch(err => {
+        setLoading(false)
+        setError(err)
+      })
 
   }, [])
 
