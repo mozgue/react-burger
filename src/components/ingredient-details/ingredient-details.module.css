@@ -1,0 +1,22 @@
+.image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 16px;
+}
+.title {
+  margin-bottom: 32px;
+  text-align: center;
+}
+  .values {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+    .values td {
+      width: 25%;
+      text-align: center;
+    }
+    .values thead td {
+      padding-bottom: 8px;
+    }
